@@ -1,0 +1,6 @@
+{
+  "chunk_size": 300,
+  "overlap": 40,
+  "top_k": 3,
+  "description": "Change chunk size only."
+}

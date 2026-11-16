@@ -1,0 +1,5 @@
+# Lab 3 additions
+# Keep your existing Lab 2 requirements.txt as well.
+openai>=1.0.0
+anthropic>=0.30.0
+python-dotenv>=1.0.0

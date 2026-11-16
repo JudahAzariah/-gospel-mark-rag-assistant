@@ -1,0 +1,6 @@
+{
+  "chunk_size": 200,
+  "overlap": 40,
+  "top_k": 5,
+  "description": "Change top-k only."
+}

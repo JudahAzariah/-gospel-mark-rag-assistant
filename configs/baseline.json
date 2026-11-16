@@ -1,0 +1,6 @@
+{
+  "chunk_size": 200,
+  "overlap": 40,
+  "top_k": 3,
+  "description": "Original Lab 2 defaults."
+}

@@ -1,0 +1,5 @@
+# Add these to your existing .gitignore
+.env
+__pycache__/
+.rag_cache/
+results/*.json

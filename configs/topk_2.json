@@ -1,0 +1,6 @@
+{
+  "chunk_size": 200,
+  "overlap": 40,
+  "top_k": 2,
+  "description": "Change top-k only to test lower latency/cost."
+}

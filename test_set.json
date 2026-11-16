@@ -1,0 +1,257 @@
+[
+  {
+    "id": 1,
+    "question": "Who baptized Jesus?",
+    "expected_answer": "John the Baptist",
+    "expected_reference": "Mark 1:9",
+    "type": "closed",
+    "split": "development",
+    "match_keywords": [
+      "john the baptist"
+    ]
+  },
+  {
+    "id": 2,
+    "question": "What did Jesus say to the storm?",
+    "expected_answer": "Peace, be still.",
+    "expected_reference": "Mark 4:39",
+    "type": "closed",
+    "split": "development",
+    "match_keywords": [
+      "peace",
+      "be still"
+    ]
+  },
+  {
+    "id": 3,
+    "question": "How many loaves were available when Jesus fed the five thousand?",
+    "expected_answer": "Five loaves.",
+    "expected_reference": "Mark 6:38",
+    "type": "closed",
+    "split": "development",
+    "match_keywords": [
+      "five loaves"
+    ]
+  },
+  {
+    "id": 4,
+    "question": "Who betrayed Jesus?",
+    "expected_answer": "Judas Iscariot.",
+    "expected_reference": "Mark 14:10",
+    "type": "closed",
+    "split": "development",
+    "match_keywords": [
+      "judas iscariot"
+    ]
+  },
+  {
+    "id": 5,
+    "question": "What was the name of the blind man Jesus healed near Jericho?",
+    "expected_answer": "Bartimaeus.",
+    "expected_reference": "Mark 10:46",
+    "type": "closed",
+    "split": "development",
+    "match_keywords": [
+      "bartimaeus"
+    ]
+  },
+  {
+    "id": 6,
+    "question": "What did Jesus call the first two brothers he invited to follow him, Simon and Andrew, to become?",
+    "expected_answer": "Fishers of people.",
+    "expected_reference": "Mark 1:16-17",
+    "type": "closed",
+    "split": "development",
+    "match_keywords": [
+      "fishers of men",
+      "fishers of people"
+    ]
+  },
+  {
+    "id": 7,
+    "question": "What was the name of the synagogue ruler whose daughter Jesus raised?",
+    "expected_answer": "Jairus.",
+    "expected_reference": "Mark 5:22-23, 35-43",
+    "type": "closed",
+    "split": "development",
+    "match_keywords": [
+      "jairus"
+    ]
+  },
+  {
+    "id": 8,
+    "question": "What was the name of the tax collector Jesus called to follow him?",
+    "expected_answer": "Levi.",
+    "expected_reference": "Mark 2:14",
+    "type": "closed",
+    "split": "development",
+    "match_keywords": [
+      "levi"
+    ]
+  },
+  {
+    "id": 9,
+    "question": "How many baskets of leftover pieces were collected after Jesus fed the five thousand?",
+    "expected_answer": "Twelve baskets.",
+    "expected_reference": "Mark 6:43",
+    "type": "closed",
+    "split": "development",
+    "match_keywords": [
+      "twelve baskets",
+      "12 baskets"
+    ]
+  },
+  {
+    "id": 10,
+    "question": "What did Jesus say is the greatest commandment?",
+    "expected_answer": "To love the Lord your God with all your heart, soul, mind, and strength.",
+    "expected_reference": "Mark 12:29-30",
+    "type": "open",
+    "split": "development"
+  },
+  {
+    "id": 11,
+    "question": "What is the second commandment Jesus gives alongside the greatest commandment?",
+    "expected_answer": "Love your neighbor as yourself.",
+    "expected_reference": "Mark 12:31",
+    "type": "closed",
+    "split": "development",
+    "match_keywords": [
+      "love your neighbor as yourself",
+      "love thy neighbour as thyself"
+    ]
+  },
+  {
+    "id": 12,
+    "question": "Why did Jesus use parables when teaching the crowds, according to Mark 4?",
+    "expected_answer": "Jesus used parables to reveal the kingdom to those receptive to his teaching while leaving outsiders without the same understanding; Mark describes this in terms of the secret of the kingdom and seeing/hearing without perceiving.",
+    "expected_reference": "Mark 4:10-12",
+    "type": "open",
+    "split": "development"
+  },
+  {
+    "id": 13,
+    "question": "What did Jesus do when he saw the merchants and money changers in the temple?",
+    "expected_answer": "He drove out those buying and selling, overturned the tables of the money changers and seats of those selling doves, and taught that the temple should be a house of prayer.",
+    "expected_reference": "Mark 11:15-17",
+    "type": "open",
+    "split": "development"
+  },
+  {
+    "id": 14,
+    "question": "How did Jesus respond when the disciples argued about who was the greatest?",
+    "expected_answer": "He taught that anyone who wants to be first must be last of all and servant of all, and he placed a child among them as an example.",
+    "expected_reference": "Mark 9:33-37",
+    "type": "open",
+    "split": "development"
+  },
+  {
+    "id": 15,
+    "question": "What did Jesus say to the paralyzed man before telling him to get up and walk?",
+    "expected_answer": "Son, your sins are forgiven.",
+    "expected_reference": "Mark 2:5",
+    "type": "closed",
+    "split": "development",
+    "match_keywords": [
+      "your sins are forgiven",
+      "sins are forgiven"
+    ]
+  },
+  {
+    "id": 16,
+    "question": "What did Jesus ask the disciples after calming the storm?",
+    "expected_answer": "He asked why they were afraid and whether they still had no faith.",
+    "expected_reference": "Mark 4:40",
+    "type": "open",
+    "split": "development"
+  },
+  {
+    "id": 17,
+    "question": "What did the voice from heaven say at Jesus' baptism?",
+    "expected_answer": "You are my beloved Son; with you I am well pleased.",
+    "expected_reference": "Mark 1:11",
+    "type": "open",
+    "split": "development"
+  },
+  {
+    "id": 18,
+    "question": "What did Jesus say was impossible for humans but possible with God?",
+    "expected_answer": "He said that with humans it is impossible, but not with God; all things are possible with God.",
+    "expected_reference": "Mark 10:27",
+    "type": "closed",
+    "split": "development",
+    "match_keywords": [
+      "with god",
+      "all things are possible"
+    ]
+  },
+  {
+    "id": 19,
+    "question": "What did Jesus pray in Gethsemane before his arrest?",
+    "expected_answer": "He prayed that the cup might be taken from him, while submitting to God's will.",
+    "expected_reference": "Mark 14:32-36",
+    "type": "open",
+    "split": "development"
+  },
+  {
+    "id": 20,
+    "question": "What did the Roman centurion say when Jesus died?",
+    "expected_answer": "Truly this man was the Son of God.",
+    "expected_reference": "Mark 15:39",
+    "type": "closed",
+    "split": "development",
+    "match_keywords": [
+      "son of god"
+    ]
+  },
+  {
+    "id": 21,
+    "question": "What did Jesus tell the man who had been healed of the legion of demons to do after he was healed?",
+    "expected_answer": "Go home to his own people and tell them how much the Lord had done for him and how he had mercy on him.",
+    "expected_reference": "Mark 5:19",
+    "type": "open",
+    "split": "heldout"
+  },
+  {
+    "id": 22,
+    "question": "How many people did Jesus send out in pairs to preach and minister?",
+    "expected_answer": "Twelve.",
+    "expected_reference": "Mark 6:7",
+    "type": "closed",
+    "split": "heldout",
+    "match_keywords": [
+      "twelve",
+      "12"
+    ]
+  },
+  {
+    "id": 23,
+    "question": "What did Jesus say about the mustard seed in Mark 4?",
+    "expected_answer": "It is the smallest of all seeds on earth, yet when sown it grows and becomes larger than the other garden plants, with large branches so birds can nest in its shade.",
+    "expected_reference": "Mark 4:30-32",
+    "type": "open",
+    "split": "heldout"
+  },
+  {
+    "id": 24,
+    "question": "Who helped carry Jesus' cross?",
+    "expected_answer": "Simon of Cyrene.",
+    "expected_reference": "Mark 15:21",
+    "type": "closed",
+    "split": "heldout",
+    "match_keywords": [
+      "simon of cyrene"
+    ]
+  },
+  {
+    "id": 25,
+    "question": "What was written on the sign above Jesus at the crucifixion?",
+    "expected_answer": "The King of the Jews.",
+    "expected_reference": "Mark 15:26",
+    "type": "closed",
+    "split": "heldout",
+    "match_keywords": [
+      "king of the jews"
+    ]
+  }
+]
