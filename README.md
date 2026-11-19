@@ -1,53 +1,195 @@
-# Lab 2 — Retrieval: Grounding a Model in Your Own Data
+# AI-Powered RAG Application: Gospel of Mark
 
-A terminal-based RAG demo built around the King James Version Gospel of Mark. It covers ingestion/chunking, embeddings, top-k similarity search, five-question retrieval evaluation, grounded LLM answers with local source citations, and out-of-corpus refusal tests.
+**Graduate Coursework Project**  
+**CSCI 5650: Professional AI-Based Software Architectures (from Startup to Enterprise)**  
+**California Baptist University**
 
-## Setup (Windows PowerShell)
+This project is a Retrieval-Augmented Generation (RAG) application developed as part of my graduate coursework at California Baptist University.
 
-```powershell
-py -3.12 -m venv .venv
-.\.venv\Scripts\Activate.ps1
-python -m pip install --upgrade pip
+The application allows users to ask questions about the Gospel of Mark and generates answers based on relevant passages retrieved from the source material. The project focuses on building a complete AI application, from retrieval and LLM integration to evaluation, deployment, guardrails, and monitoring.
+
+## Project Overview
+
+The main goal of this project was to build a practical RAG system that can retrieve relevant information from a source document and use an LLM to generate an answer based on that information.
+
+The application uses the Gospel of Mark as its knowledge source. Instead of sending the entire document to the LLM for every question, the system first searches for relevant passages and then provides those passages as context for the response.
+
+This helps keep responses focused on the available source material and reduces the chance of unsupported answers.
+
+## Architecture
+
+The application follows a basic RAG pipeline:
+
+```text
+User Question
+      |
+      v
+Embedding Generation
+      |
+      v
+Vector Search
+      |
+      v
+Relevant Passages
+      |
+      v
+LLM with Retrieved Context
+      |
+      v
+Generated Response
+```
+
+The main components are:
+
+- Document corpus containing the Gospel of Mark
+- Text chunking and preprocessing
+- Sentence Transformer embeddings
+- Vector similarity search
+- Retrieval of relevant passages
+- LLM-based response generation
+- Evaluation and comparison of different configurations
+- Request logging and monitoring
+- Rate limiting and error handling
+- Streamlit-based web interface
+
+## Technology Stack
+
+**Programming**
+- Python
+
+**AI and Machine Learning**
+- Large Language Models
+- Retrieval-Augmented Generation (RAG)
+- Sentence Transformers
+- Vector embeddings
+- Semantic search
+
+**Libraries and Tools**
+- Streamlit
+- NumPy
+- Python dotenv
+- Google Gemini API
+
+**Development**
+- Git
+- GitHub
+- Virtual environments
+- Environment variables
+
+## Evaluation
+
+The project includes an evaluation pipeline to test the quality of the RAG system.
+
+Different retrieval configurations were tested by changing parameters such as:
+
+- Chunk size
+- Chunk overlap
+- Number of retrieved passages
+- Retrieval settings
+
+The evaluation system records individual results as well as overall performance. Failure analysis was also used to identify common types of errors and areas where the system could be improved.
+
+## Reliability and Observability
+
+The project also includes several features intended to make the application more reliable outside of a basic prototype.
+
+These include:
+
+- Request logging
+- Response latency tracking
+- Token usage tracking
+- Estimated request cost
+- Rate limiting
+- API failure handling
+- Graceful error messages
+- Usage summaries
+
+The application records request information so that performance and usage can be reviewed after deployment.
+
+## Deployment
+
+The application is deployed using Streamlit Community Cloud and can be accessed publicly.
+
+**Live Application:**  
+https://pbfwa5vwaau9tjgqyovwbo.streamlit.app/
+
+The application uses environment variables for API configuration so that API keys are not stored in the GitHub repository.
+
+## Project Structure
+
+```text
+.
+├── main.py
+├── streamlit_app.py
+├── evaluate_lab3.py
+├── failure_analysis.py
+├── compare_configs.py
+├── test_set.json
+├── evaluation_results.md
+├── requirements.txt
+│
+├── configs/
+│   ├── baseline.json
+│   ├── chunk_300.json
+│   ├── topk_2.json
+│   └── topk_5.json
+│
+├── results/
+│   ├── comparison.json
+│   └── comparison.md
+│
+├── logs/
+│   └── requests.jsonl
+│
+└── corpus/
+    └── mark.txt
+```
+
+## Running the Project Locally
+
+Clone the repository and install the required packages:
+
+```bash
+git clone <repository-url>
+cd <repository-folder>
 pip install -r requirements.txt
-Copy-Item .env.example .env
 ```
 
-Edit `.env`. Set `LLM_PROVIDER=openai` and add your OpenAI API key, or choose `LLM_PROVIDER=anthropic` and add your Anthropic API key. Never submit `.env` or include an API key in your video.
+Create a `.env` file based on `.env.example` and add the required API configuration.
 
-The first run downloads the public-domain KJV Gospel of Mark JSON from a public GitHub repository, converts it to `corpus/mark.txt`, and downloads the sentence-transformer embedding model. An internet connection is needed for first-time setup.
+Then start the application:
 
-## Commands
-
-```powershell
-# Interactive grounded Q&A
-python main.py
-
-# Retrieve top-k chunks for an arbitrary query without generating an answer
-python main.py search "What did Jesus say to the storm?"
-
-# Run the five known-answer retrieval tests and save real results
-python main.py evaluate
-
-# Compare 200-word and 300-word target chunks
-python main.py compare
-
-# Run two out-of-corpus refusal tests
-python main.py refusal
-
-# Change k, chunk size, or overlap
-python main.py search "Who baptized Jesus?" --top-k 5
-python main.py chat --chunk-size 300 --overlap 50
+```bash
+python -m streamlit run streamlit_app.py
 ```
 
-## Implementation notes
+The application will be available at:
 
-- Target chunk size: **200 words**; overlap: **40 words**. Chunk boundaries respect verse boundaries, so real chunk sizes are approximate.
-- A second evaluation runs at a target chunk size of 300 words to meet the requirement to try at least two configurations.
-- `sentence-transformers/all-MiniLM-L6-v2` embeds every chunk. The vectors are normalized, persisted as NumPy arrays in `.rag_cache/`, and queried with dot-product cosine similarity.
-- `evaluate` prints every test's retrieved chunks and calculates the observed hit rate; it writes the run's actual results to `evaluation_results.md`. Do not claim a hit rate until you have run it.
-- The answering prompt restricts the model to retrieved context. An additional configurable cosine-similarity threshold refuses very low-relevance questions. Review both refusal outputs and adjust `RAG_MIN_SIMILARITY` only if the actual results justify it.
-- Sources are printed with file name, chunk ID, verse references, similarity score, and a quote for verification.
+```text
+http://localhost:8501
+```
 
-## Public-data attribution
+## Academic Context
 
-The text is the King James Version, public domain in the United States. The downloader tries the per-book JSON repository at `https://github.com/nolanbaxter/kjv-bible` and falls back to `https://github.com/thiagobodruk/bible`.
+This project was developed for graduate coursework at California Baptist University as part of CSCI 5650.
+
+The project covers concepts including:
+
+- Retrieval-Augmented Generation
+- LLM and API integration
+- Prompt design
+- Vector search
+- AI evaluation
+- Cost and latency analysis
+- Application deployment
+- Rate limiting
+- Error handling
+- Logging and observability
+
+The project was developed incrementally through the course, starting with a basic RAG application and extending it with evaluation, optimization, deployment, and operational features.
+
+## What I Learned
+
+This project gave me hands-on experience building an AI application beyond a simple chatbot. It involved working with retrieval systems, LLM APIs, evaluation methods, deployment platforms, and the operational issues that come with running an AI application.
+
+The main focus was not just getting an LLM to generate an answer, but understanding how the different parts of an AI system work together in a complete application.
